@@ -6,10 +6,9 @@
     <title>Izavell XIV</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Use the Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Load Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLwFjX9gLp0T0tC9u+26f8Cj3P4x5oV+j1GgV902Q1d4k+2nB/2pD58a3R65kL8R9W4aV+Gv8xN6M+z/5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Use the Times font -->
     <style>
         body {
             font-family: 'Times', sans-serif;
@@ -24,10 +23,10 @@
 
         /*
           This custom class adjusts the vertical position of the background image
-          to crop around the desired area on wider screens, as shown here:
+          to crop around the desired area on wider screens.
         */
         .bg-custom-top {
-            background-position: center 15%;
+            background-position: center 30%;
         }
     </style>
 </head>
@@ -36,9 +35,21 @@
     <div class="bg-portrait h-screen w-screen bg-cover bg-custom-top flex items-end justify-end relative">
         <!-- Text container with 10% padding from the bottom and right -->
         <div class="absolute right-[10%] bottom-[10%] text-white text-right">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider">
-                <a href="https://open.spotify.com/track/416v5trh0vAxirUjTfzPOf?si=ub4XbBhfRtqAi4q0h4j95Q&fbclid=PAZXh0bgNhZW0CMTEAAacw1-dJGQ92Av2fQ-BmcfUUmfK7dORy0Pg-CKQIm5Jl7vbnlRp81t54L69-vg_aem_0ha4IRNbv6pfcn5SZhtLNQ&nd=1&dlsi=e074bfe483e64f96">IZAVELL XIV</a>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider mb-4">
+                Izavell XIV
             </h1>
+            <!-- Social media buttons -->
+            <div class="flex justify-end space-x-4 text-xl">
+                <a href="https://www.instagram.com/izavellxiv/" class="rounded-full bg-white/20 p-2 hover:bg-white/40 transition-colors duration-300" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+<!--                 <a href="#" class="rounded-full bg-white/20 p-2 hover:bg-white/40 transition-colors duration-300" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i> -->
+                </a>
+                <a href="https://www.tiktok.com/@izavell.xiv" class="rounded-full bg-white/20 p-2 hover:bg-white/40 transition-colors duration-300" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
         </div>
     </div>
 </body>
