@@ -4,49 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Izavell XIV</title>
-    <!-- Favicon link pointing to a file in the same directory -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://izavellxiv.com/">
+    <meta property="og:title" content="Izavell XIV">
+    <meta property="og:description" content="Official site for Izavell XIV. Music, bookings, and socials.">
+    <meta property="og:image" content="https://i.imgur.com/lgEbUaq.png">
+
     <link rel="icon" href="favicon14.png">
-    <!-- Load Tailwind CSS -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Font Awesome for social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLwFjX9gLp0T0tC9u+26f8Cj3P4x5oV+j1GgV902Q1d4k+2nB/2pD58a3R65kL8R9W4aV+Gv8xN6M+z/5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Use the Times font -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
         body {
             font-family: 'Times', sans-serif;
         }
-        /*
-          The background-image is a portrait photo.
-          The bg-cover class from Tailwind handles the cropping.
-        */
+        /* The background-image is a portrait photo. */
         .bg-portrait {
             background-image: url('izzy-club.png');
         }
 
-        /*
-          This custom class adjusts the vertical position of the background image
-          to crop around the desired area on wider screens.
-        */
+        /* Adjusts the vertical position of the background image */
         .bg-custom-top {
             background-position: center 20%;
         }
 
         /* Custom sizing for the calendar container */
         .calendar-container {
-            height: 61vh; /* 61% of vertical viewport height */
-            width: 95vw;  /* 95% of vertical viewport width */
+            height: 61vh; 
+            width: 95vw;
         }
         
-        /* Custom font stack for Futura Book (used for the copyright notice) */
+        /* Custom font stack for Futura Book */
         .font-futura-book {
             font-family: "Futura Book", "Futura", "Trebuchet MS", Arial, sans-serif;
         }
     </style>
 </head>
 <body class="bg-gray-900">
-    <!-- Main container for the full-screen background image -->
     <div class="bg-portrait h-screen w-screen bg-cover bg-custom-top flex items-end justify-end relative">
-        <!-- Copyright text container with 3% padding from the bottom and left -->
+        
         <div class="absolute left-[3%] bottom-[3%] text-white text-left">
             <p class="text-sm sm:text-base font-futura-book">
                 <a href="https://github.com/mofrymatic/izavellxiv" target="_blank" class="hover:underline transition-colors duration-300">
@@ -54,19 +53,16 @@
                 </a>
             </p>
         </div>
-        <!-- Text container with 5% padding from the bottom and right -->
+
         <div class="absolute right-[5%] bottom-[5%] text-white text-right">
-            <!-- Increased drop shadow strength on the text (drop-shadow-2xl) -->
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider mb-4 drop-shadow-2xl">
                 Izavell XIV
             </h1>
-            <!-- Social media buttons (all now explicitly sized w-10 h-10 for consistent circles) -->
+            
             <div class="flex justify-end space-x-4 text-xl">
-                <!-- Spotify -->
                 <a href="https://open.spotify.com/artist/0XjBY3euaISYo8HU5wuzsX" class="rounded-full bg-white/20 p-2 w-10 h-10 flex items-center justify-center hover:bg-white/40 transition-colors duration-300" aria-label="Spotify">
                     <i class="fab fa-spotify"></i>
                 </a>
-                <!-- SoundCloud Button (Updated from Facebook to match screenshot) -->
                 <a href="https://soundcloud.com/yourpage" target="_blank" class="rounded-full bg-white/20 p-2 w-10 h-10 flex items-center justify-center hover:bg-white/40 transition-colors duration-300" aria-label="SoundCloud">
                     <i class="fab fa-soundcloud"></i>
                 </a>
@@ -76,7 +72,6 @@
                 <a href="https://www.tiktok.com/@izavell.xiv" target="_blank" class="rounded-full bg-white/20 p-2 w-10 h-10 flex items-center justify-center hover:bg-white/40 transition-colors duration-300" aria-label="TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <!-- Booking icon that opens the calendar modal (Fixed sizing) -->
                 <button onclick="showModal()" class="rounded-full bg-white/20 p-2 w-10 h-10 flex items-center justify-center hover:bg-white/40 transition-colors duration-300 focus:outline-none" aria-label="Booking Calendar">
                     <i class="fas fa-calendar"></i>
                 </button>
@@ -84,15 +79,9 @@
         </div>
     </div>
 
-    <!-- Calendar Modal Overlay (Hidden by default) -->
     <div id="calendar-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden" onclick="closeModal(event)">
-        <!-- Modal Content Container -->
-        <div class="bg-white p-4 rounded-lg shadow-2xl flex flex-col items-center max-w-full m-4" 
-             onclick="event.stopPropagation()"> <!-- Stop propagation prevents clicking inside from closing the modal -->
-            
-            <!-- Calendar and Booking Container (Custom sized) -->
+        <div class="bg-white p-4 rounded-lg shadow-2xl flex flex-col items-center max-w-full m-4" onclick="event.stopPropagation()"> 
             <div class="calendar-container flex flex-col items-center justify-center overflow-hidden rounded-lg">
-                <!-- Google Calendar Iframe (Updated with new src) -->
                 <iframe 
                     src="https://calendar.google.com/calendar/embed?src=c_67ec1f10d9acf46cc468c92f2131434570e9bdd26999500c75024e5b49c5203b%40group.calendar.google.com&ctz=America%2FLos_Angeles" 
                     class="w-full h-full border-0 rounded-lg" 
@@ -102,12 +91,10 @@
                 </iframe>
             </div>
 
-            <!-- Book Now Button -->
             <a href="https://calendly.com/mofrymatic/30min" target="_blank" class="mt-4 px-8 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-lg hover:bg-red-700 transition-colors duration-300 uppercase tracking-widest text-sm sm:text-base">
                 Book Now
             </a>
 
-            <!-- Close Button -->
             <button onclick="closeModal()" class="mt-4 text-gray-400 hover:text-gray-600 transition-colors duration-300 focus:outline-none text-sm">
                 Close
             </button>
@@ -115,26 +102,17 @@
     </div>
 
     <script>
-        // Get the modal element
         const modal = document.getElementById('calendar-modal');
 
-        /**
-         * Shows the calendar modal.
-         */
         function showModal() {
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling the background
+            document.body.style.overflow = 'hidden';
         }
 
-        /**
-         * Closes the calendar modal.
-         * @param {Event} event - The click event (optional).
-         */
         function closeModal(event) {
-            // Only close if the click is on the backdrop or the close button
             if (!event || event.target === modal || event.target.closest('button[onclick="closeModal()"]')) {
                 modal.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }
         }
     </script>
